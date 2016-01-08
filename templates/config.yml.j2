@@ -14,3 +14,99 @@ rexray:
 {% for driver in rexray_storage_drivers %}
   - {{ driver }}
 {% endfor %}
+{% if "ec2" in rexray_storage_drivers %}
+aws:
+  accessKey:
+  secretKey:
+{% if rexray_awx_region is defined %}
+  region:
+{% endif %}
+{% endif %}
+{% if "gce" in rexray_storage_drivers %}
+gce:
+  keyfile:
+{% endif %}
+{% if "isilon" in rexray_storage_drivers %}
+isilon:
+  endpoint:
+  insecure:
+  username:
+  password:
+  volumePath:
+  nfsHost:
+{% endif %}
+{% if "openstack" in rexray_storage_drivers %}
+openstack:
+  authURL:
+  userID:
+  userName:
+  password:
+  tenantID:
+  tenantName:
+  domainID:
+  domainName:
+  regionName:
+  availabilityZoneName:
+{% endif %}
+{% if "scaleio" in rexray_storage_drivers %}
+scaleio:
+  endpoint:
+  insecure:
+  useCerts:
+  userName:
+  password:
+  systemID:
+  systemName:
+  protectionDomainID:
+  protectionDomainName:
+  storagePoolID:
+  storagePoolName:
+{% endif %}
+{% if "rackspace" in rexray_storage_drivers %}
+rackspace:
+  authURL:
+  userID:
+  userName:
+  password:
+  tenantID:
+  tenantName:
+  domainID:
+  domainName:
+{% endif %}
+{% if "virtualbox" in rexray_storage_drivers %}
+virtualbox:
+  endpoint:
+  userName:
+  password:
+  tls:
+  volumePath:
+  controllerName:
+  localMachineNameOrId:
+{% endif %}
+{% if "vmax" in rexray_storage_drivers %}
+vmax:
+  smisHost:
+  smisPort:
+  insecure:
+  username:
+  password:
+  sid:
+  volumePrefix:
+  storageGroup:
+  mode:
+  vmh:
+    host:
+    username:
+    password:
+    insecure:
+{% endif %}
+{% if "xtremio" in rexray_storage_drivers %}
+xtremio:
+  endpoint:
+  userName:
+  password:
+  insecure:
+  deviceMapper:
+  multipath:
+  remoteManagement:
+{% endif %}
