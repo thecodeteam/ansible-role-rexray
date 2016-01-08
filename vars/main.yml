@@ -4,3 +4,4 @@
 rexray_pkg_url: https://dl.bintray.com/emccode/rexray
 rexray_channel: stable
 rexray_version: latest
+rexray_service: false

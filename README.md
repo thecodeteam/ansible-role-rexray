@@ -23,6 +23,12 @@ rexray_channel: stable
 The rexray channel refers to where to get the package from and can be one of `stable`,
 `unstable`, or `staged`.
 
+```yaml
+rexray_service: false
+```
+
+This controls whether or not the rexray service/daemon should be started on the node.
+
 Dependencies
 ------------
 
@@ -34,7 +40,13 @@ Example Playbook
 ```yaml
 - hosts: docker_hosts
   roles:
-  - { role: codenrhoden.rexray, rexray_channel: stable}
+  - { role: codenrhoden.rexray, rexray_service: true }
+- hosts: persistent_store_containers
+  roles:
+  - { role: codenrhoden.rexray }
+- hosts: experimental_containers
+  roles:
+  - { role: codenrhoden.rexray, rexray_channel: unstable }
 ```
 
 License

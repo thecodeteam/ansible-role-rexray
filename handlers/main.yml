@@ -1,2 +1,4 @@
 ---
-# handlers file for rexray
+- name: restart rexray
+  command: rexray service restart
+  when: rexray_service
