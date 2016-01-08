@@ -29,6 +29,14 @@ rexray_service: false
 
 This controls whether or not the rexray service/daemon should be started on the node.
 
+```yaml
+rexray_storage_drivers: []
+```
+
+This is a list of all storage drivers to enable. The default is an empty list, but at least
+one storage driver **must** be enabled for REX-Ray to function. Setting this role variable
+is therefore **mandatory**.
+
 Dependencies
 ------------
 

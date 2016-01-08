@@ -1,7 +1,14 @@
 ---
-# vars file for rexray
-
-rexray_pkg_url: https://dl.bintray.com/emccode/rexray
+# channel can be stable | unstable | staged
 rexray_channel: stable
-rexray_version: latest
+
+# service can be true of false - determines whether to start the rexray daemon
 rexray_service: false
+
+# list of storage drivers to enable
+# one of ec2 | gce | isilon | openstack | scaleio | rackspace | virtualbox | vmax | xtremio
+rexray_storage_drivers: []
+
+# These should not be overriden at this time
+rexray_pkg_url: https://dl.bintray.com/emccode/rexray
+rexray_version: latest

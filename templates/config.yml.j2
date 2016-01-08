@@ -7,3 +7,6 @@ rexray:
   volumeDrivers:
   - docker
   storageDrivers:
+{% for driver in rexray_storage_drivers %}
+  - {{ driver }}
+{% endfor %}
