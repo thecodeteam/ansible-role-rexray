@@ -3,9 +3,13 @@
 rexray:
   logLevel: warn
   osDrivers:
-  - linux
+{% for driver in rexray_os_drivers %}
+  - {{ driver }}
+{% endfor %}
   volumeDrivers:
-  - docker
+{% for driver in rexray_volume_drivers %}
+  - {{ driver }}
+{% endfor %}
   storageDrivers:
 {% for driver in rexray_storage_drivers %}
   - {{ driver }}
