@@ -1,0 +1,4 @@
+---
+- name: Ensure REX-Ray package is installed
+  yum: name={{ rexray_pkg_url }}/{{ rexray_channel }}/{{ rexray_version }}/rexray-{{ rexray_version }}-{{ ansible_architecture }}.rpm state=present
+

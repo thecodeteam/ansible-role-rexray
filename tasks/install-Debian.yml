@@ -1,0 +1,20 @@
+---
+- name: Check if REX-Ray is installed
+  command: dpkg-query -W rexray
+  register: rexray_check_deb
+  failed_when: rexray_check_deb.rc > 1
+  changed_when: false
+
+- name: Download REX-Ray .deb to local file
+  get_url:
+    url="{{ rexray_pkg_url }}/{{ rexray_channel }}/{{ rexray_version }}/rexray-{{ rexray_version }}-{{ ansible_architecture }}.deb"
+    dest=/tmp
+  when: rexray_check_deb.rc == 1
+
+- name: Install REX-Ray .deb
+  apt: deb="/tmp/rexray-{{ rexray_version }}-{{ ansible_architecture }}.deb" state=present
+  when: rexray_check_deb.rc == 1
+
+- name: Delete temporary file
+  file: path="/tmp/rexray-{{ rexray_version }}-{{ ansible_architecture }}.deb" state=absent
+  when: rexray_check_deb.rc == 1

@@ -1,0 +1,9 @@
+---
+# OS-specific install routines
+- include: install-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: install-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: config.yml

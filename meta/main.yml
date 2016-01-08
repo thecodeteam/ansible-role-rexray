@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: Travis Rhoden
+  description: REX-Ray installation and configuration
+  company: EMC {code}
+  license: license (Apache)
+  min_ansible_version: 1.6
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+    - utopic
+    - vivid
+  - name: Debian
+    versions:
+    - squeeze
+    - wheezy
+  categories:
+  - cloud
+  - cloud:ec2
+  - cloud:gce
+  - cloud:rax
+  - development
+dependencies: []

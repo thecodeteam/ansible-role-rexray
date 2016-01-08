@@ -1,0 +1,7 @@
+---
+
+- name: Create config file directory
+  file: path=/etc/rexray state=directory mode=0755 owner=root group=root
+
+- name: Add rexray config file
+  template: src=config.yml.j2 dest=/etc/rexray/config.yml mode=0755 owner=root group=root
