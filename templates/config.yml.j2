@@ -26,12 +26,12 @@ gce:
 {% endif %}
 {% if "isilon" in rexray_storage_drivers %}
 isilon:
-  endpoint:
-  insecure:
-  username:
-  password:
-  volumePath:
-  nfsHost:
+  endpoint: {{ rexray_isilon_endpoint }}
+  insecure: {{ rexray_isilon_insecure }}
+  username: {{ rexray_isilon_username }}
+  password: {{ rexray_isilon_password }}
+  volumePath: {{ rexray_isilon_volumePath }}
+  nfsHost: {{ rexray_isilon_nfsHost }}
 {% endif %}
 {% if "openstack" in rexray_storage_drivers %}
 openstack:

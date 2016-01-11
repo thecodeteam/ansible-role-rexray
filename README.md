@@ -54,6 +54,17 @@ rexray_aws_region: ''
 rexray_gce_keyfile: ''
 ```
 
+**Isilon**
+
+```yaml
+rexray_isilon_endpoint: ''
+rexray_isilon_insecure: false
+rexray_isilon_username: ''
+rexray_isilon_password: ''
+rexray_isilon_volumePath: ''
+rexray_isilon_nfsHost: ''
+```
+
 **VirtualBox**
 
 ```yaml
