@@ -48,6 +48,12 @@ rexray_aws_secretkey: ''
 rexray_aws_region: ''
 ```
 
+**GCE**
+
+```yaml
+rexray_gce_keyfile: ''
+```
+
 **VirtualBox**
 
 ```yaml

@@ -22,7 +22,7 @@ aws:
 {% endif %}
 {% if "gce" in rexray_storage_drivers %}
 gce:
-  keyfile:
+  keyfile: {{ rexray_gce_keyfile }}
 {% endif %}
 {% if "isilon" in rexray_storage_drivers %}
 isilon:

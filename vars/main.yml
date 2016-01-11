@@ -14,6 +14,9 @@ rexray_aws_accesskey: ''
 rexray_aws_secretkey: ''
 rexray_aws_region: ''
 
+# GCE Storage Driver
+rexray_gce_keyfile: ''
+
 # Virtual Box Storage Driver
 rexray_vbox_endpoint: ''
 rexray_vbox_user: ''
