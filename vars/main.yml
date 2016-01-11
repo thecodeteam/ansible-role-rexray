@@ -6,8 +6,17 @@ rexray_channel: stable
 rexray_service: false
 
 # list of storage drivers to enable
-# one of ec2 | gce | isilon | openstack | scaleio | rackspace | virtualbox | vmax | xtremio
+# one of ec2 | gce | isilon | openstack | rackspace | scaleio | virtualbox | vmax | xtremio
 rexray_storage_drivers: []
+
+# Virtual Box Storage Driver
+rexray_vbox_endpoint: ''
+rexray_vbox_user: ''
+rexray_vbox_pass: ''
+rexray_vbox_tls: false
+rexray_vbox_volume_path: ''
+rexray_vbox_controller_name: SATA
+rexray_vbox_machine: ''
 
 # These should not be overriden at this time
 rexray_pkg_url: https://dl.bintray.com/emccode/rexray

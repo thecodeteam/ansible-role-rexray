@@ -37,6 +37,21 @@ This is a list of all storage drivers to enable. The default is an empty list, b
 one storage driver **must** be enabled for REX-Ray to function. Setting this role variable
 is therefore **mandatory**.
 
+Each storage driver has driver-specific variables that can be set.  Some are required, some
+are optional. Details for each driver can be found in the [User Guide)[http://rexray.readthedocs.org/en/stable/].
+
+**VirtualBox**
+
+```yaml
+rexray_vbox_endpoint: ''
+rexray_vbox_user: ''
+rexray_vbox_pass: ''
+rexray_vbox_tls: false
+rexray_vbox_volume_path: ''
+rexray_vbox_controller_name: SATA
+rexray_vbox_machine: ''
+```
+
 Dependencies
 ------------
 

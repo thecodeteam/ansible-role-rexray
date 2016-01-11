@@ -75,13 +75,13 @@ rackspace:
 {% endif %}
 {% if "virtualbox" in rexray_storage_drivers %}
 virtualbox:
-  endpoint:
-  userName:
-  password:
-  tls:
-  volumePath:
-  controllerName:
-  localMachineNameOrId:
+  endpoint: {{ rexray_vbox_endpoint }}
+  volumePath: {{ rexray_vbox_volume_path }}
+  userName: {{ rexray_vbox_user }}
+  password: {{ rexray_vbox_pass }}
+  tls: {{ rexray_vbox_tls }}
+  controllerName: {{ rexray_vbox_controller_name }}
+  localMachineNameOrId: {{ rexray_vbox_machine }}
 {% endif %}
 {% if "vmax" in rexray_storage_drivers %}
 vmax:
