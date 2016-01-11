@@ -9,6 +9,11 @@ rexray_service: false
 # one of ec2 | gce | isilon | openstack | rackspace | scaleio | virtualbox | vmax | xtremio
 rexray_storage_drivers: []
 
+# AWS EC2 Storage Driver
+rexray_aws_accesskey: ''
+rexray_aws_secretkey: ''
+rexray_aws_region: ''
+
 # Virtual Box Storage Driver
 rexray_vbox_endpoint: ''
 rexray_vbox_user: ''

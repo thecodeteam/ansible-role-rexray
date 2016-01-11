@@ -16,11 +16,9 @@ rexray:
 {% endfor %}
 {% if "ec2" in rexray_storage_drivers %}
 aws:
-  accessKey:
-  secretKey:
-{% if rexray_awx_region is defined %}
-  region:
-{% endif %}
+  accessKey: {{ rexray_aws_accesskey }}
+  secretKey: {{ rexray_aws_secretkey }}
+  region: {{ rexray_aws_region }}
 {% endif %}
 {% if "gce" in rexray_storage_drivers %}
 gce:
@@ -48,6 +46,17 @@ openstack:
   regionName:
   availabilityZoneName:
 {% endif %}
+{% if "rackspace" in rexray_storage_drivers %}
+rackspace:
+  authURL:
+  userID:
+  userName:
+  password:
+  tenantID:
+  tenantName:
+  domainID:
+  domainName:
+{% endif %}
 {% if "scaleio" in rexray_storage_drivers %}
 scaleio:
   endpoint:
@@ -61,17 +70,6 @@ scaleio:
   protectionDomainName:
   storagePoolID:
   storagePoolName:
-{% endif %}
-{% if "rackspace" in rexray_storage_drivers %}
-rackspace:
-  authURL:
-  userID:
-  userName:
-  password:
-  tenantID:
-  tenantName:
-  domainID:
-  domainName:
 {% endif %}
 {% if "virtualbox" in rexray_storage_drivers %}
 virtualbox:

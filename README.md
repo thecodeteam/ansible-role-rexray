@@ -40,6 +40,14 @@ is therefore **mandatory**.
 Each storage driver has driver-specific variables that can be set.  Some are required, some
 are optional. Details for each driver can be found in the [User Guide)[http://rexray.readthedocs.org/en/stable/].
 
+**AWS**
+
+```yaml
+rexray_aws_accesskey: ''
+rexray_aws_secretkey: ''
+rexray_aws_region: ''
+```
+
 **VirtualBox**
 
 ```yaml
