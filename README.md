@@ -93,6 +93,22 @@ rexray_rax_domainid: 0
 rexray_rax_domainname: ''
 ```
 
+**ScaleIO**
+
+```yaml
+rexray_sio_endpoint: ''
+rexray_sio_insecure: false
+rexray_sio_usecerts: false
+rexray_sio_username: ''
+rexray_sio_password: ''
+rexray_sio_systemid: 0
+rexray_sio_systemname: ''
+rexray_sio_protectiondomainid: 0
+rexray_sio_protectiondomainname: ''
+rexray_sio_storagepoolid: 0
+rexray_sio_storagepoolname: ''
+```
+
 **VirtualBox**
 
 ```yaml

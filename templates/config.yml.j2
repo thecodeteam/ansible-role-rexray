@@ -59,17 +59,17 @@ rackspace:
 {% endif %}
 {% if "scaleio" in rexray_storage_drivers %}
 scaleio:
-  endpoint:
-  insecure:
-  useCerts:
-  userName:
-  password:
-  systemID:
-  systemName:
-  protectionDomainID:
-  protectionDomainName:
-  storagePoolID:
-  storagePoolName:
+  endpoint: {{ rexray_sio_endpoint }}
+  insecure: {{ rexray_sio_insecure }}
+  useCerts: {{ rexray_sio_usecerts }}
+  userName: {{ rexray_sio_username }}
+  password: {{ rexray_sio_password }}
+  systemID: {{ rexray_sio_systemid }}
+  systemName: {{ rexray_sio_systemname }}
+  protectionDomainID: {{ rexray_sio_protectiondomainid }}
+  protectionDomainName: {{ rexray_sio_protectiondomainname }}
+  storagePoolID: {{ rexray_sio_storagepoolid }}
+  storagePoolName: {{ rexray_sio_storagepoolname }}
 {% endif %}
 {% if "virtualbox" in rexray_storage_drivers %}
 virtualbox:
