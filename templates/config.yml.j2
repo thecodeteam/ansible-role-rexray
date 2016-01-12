@@ -102,11 +102,11 @@ vmax:
 {% endif %}
 {% if "xtremio" in rexray_storage_drivers %}
 xtremio:
-  endpoint:
-  userName:
-  password:
-  insecure:
-  deviceMapper:
-  multipath:
-  remoteManagement:
+  endpoint: {{ rexray_xtremio_endpoint }}
+  userName: {{ rexray_xtremio_userName }}
+  password: {{ rexray_xtremio_password }}
+  insecure: {{ rexray_xtremio_insecure }}
+  deviceMapper: {{ rexray_xtremio_deviceMapper }}
+  multipath: {{ rexray_xtremio_multipath }}
+  remoteManagement: {{ rexray_xtremio_remoteManagement }}
 {% endif %}

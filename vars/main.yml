@@ -85,6 +85,15 @@ rexray_vmax_vmh:
   password: ''
   insecure: false
 
+# XtremIO Storage driver
+rexray_xtremio_endpoint: ''
+rexray_xtremio_userName: ''
+rexray_xtremio_password: ''
+rexray_xtremio_insecure: false
+rexray_xtremio_deviceMapper: false
+rexray_xtremio_multipath: false
+rexray_xtremio_remoteManagement: false
+
 # These should not be overriden at this time
 rexray_pkg_url: https://dl.bintray.com/emccode/rexray
 rexray_version: latest

@@ -140,6 +140,18 @@ rexray_vmax_vmh:
   insecure: false
 ```
 
+**XtremIO**
+
+```yaml
+rexray_xtremio_endpoint: ''
+rexray_xtremio_userName: ''
+rexray_xtremio_password: ''
+rexray_xtremio_insecure: false
+rexray_xtremio_deviceMapper: false
+rexray_xtremio_multipath: false
+rexray_xtremio_remoteManagement: false
+```
+
 Dependencies
 ------------
 
