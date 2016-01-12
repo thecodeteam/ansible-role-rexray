@@ -160,16 +160,28 @@ None
 Example Playbook
 ----------------
 
+It is **highly** recommended to use [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html)
+for storing sensitive variable values, such as passwords and API keys.
+
 ```yaml
-- hosts: docker_hosts
+- hosts: gce_docker_hosts
   roles:
-  - { role: codenrhoden.rexray, rexray_service: true }
-- hosts: persistent_store_containers
+  - { role: codenrhoden.rexray,
+      rexray_service: true,
+      rexray_storage_drivers: [gce],
+      rexray_gce_keyfile: "/opt/gce_keyfile" }
+- hosts: gce_containers
   roles:
-  - { role: codenrhoden.rexray }
-- hosts: experimental_containers
+  - { role: codenrhoden.rexray,
+      rexray_storage_drivers: [gce],
+      rexray_gce_keyfile: "/opt/gce_keyfile" }
+- hosts: vbox_local_dev_containers
   roles:
-  - { role: codenrhoden.rexray, rexray_channel: unstable }
+  - { role: codenrhoden.rexray,
+      rexray_channel: unstable,
+      rexray_storage_drivers: [virtualbox],
+      rexray_vbox_endpoint: "http://10.0.2.2:18083",
+      rexray_vbox_volume_path: "/Users/travis/VirtualBox VMs/Volumes" }
 ```
 
 License
