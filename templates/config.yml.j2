@@ -48,14 +48,14 @@ openstack:
 {% endif %}
 {% if "rackspace" in rexray_storage_drivers %}
 rackspace:
-  authURL:
-  userID:
-  userName:
-  password:
-  tenantID:
-  tenantName:
-  domainID:
-  domainName:
+  authURL: {{ rexray_rax_authurl }}
+  userID: {{ rexray_rax_userid }}
+  userName: {{ rexray_rax_username }}
+  password: {{ rexray_rax_password }}
+  tenantID: {{ rexray_rax_tenantid }}
+  tenantName: {{ rexray_rax_tenantname }}
+  domainID: {{ rexray_rax_domainid }}
+  domainName: {{ rexray_rax_domainname }}
 {% endif %}
 {% if "scaleio" in rexray_storage_drivers %}
 scaleio:

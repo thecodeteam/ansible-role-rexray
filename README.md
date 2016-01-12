@@ -80,6 +80,19 @@ rexray_os_regionname: ''
 rexray_os_availabilityzonename: ''
 ```
 
+**Rackspace**
+
+```yaml
+rexray_rax_authurl: ''
+rexray_rax_userid: 0
+rexray_rax_username: ''
+rexray_rax_password: ''
+rexray_rax_tenantid: 0
+rexray_rax_tenantname: ''
+rexray_rax_domainid: 0
+rexray_rax_domainname: ''
+```
+
 **VirtualBox**
 
 ```yaml
