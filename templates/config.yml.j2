@@ -35,16 +35,16 @@ isilon:
 {% endif %}
 {% if "openstack" in rexray_storage_drivers %}
 openstack:
-  authURL:
-  userID:
-  userName:
-  password:
-  tenantID:
-  tenantName:
-  domainID:
-  domainName:
-  regionName:
-  availabilityZoneName:
+  authURL: {{ rexray_os_authurl }}
+  userID: {{ rexray_os_userid }}
+  userName: {{ rexray_os_username }}
+  password: {{ rexray_os_password }}
+  tenantID: {{ rexray_os_tenantid }}
+  tenantName: {{ rexray_os_tenantname }}
+  domainID: {{ rexray_os_domainid }}
+  domainName: {{ rexray_os_domainname }}
+  regionName: {{ rexray_os_regionname }}
+  availabilityZoneName: {{ rexray_os_availabilityzonename }}
 {% endif %}
 {% if "rackspace" in rexray_storage_drivers %}
 rackspace:

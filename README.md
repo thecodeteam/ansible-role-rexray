@@ -65,6 +65,21 @@ rexray_isilon_volumePath: ''
 rexray_isilon_nfsHost: ''
 ```
 
+**OpenStack**
+
+```yaml
+rexray_os_authurl: ''
+rexray_os_userid: 0
+rexray_os_username: ''
+rexray_os_password: ''
+rexray_os_tenantid: 0
+rexray_os_tenantname: ''
+rexray_os_domainid: 0
+rexray_os_domainname: ''
+rexray_os_regionname: ''
+rexray_os_availabilityzonename: ''
+```
+
 **VirtualBox**
 
 ```yaml
