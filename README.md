@@ -38,7 +38,7 @@ one storage driver **must** be enabled for REX-Ray to function. Setting this rol
 is therefore **mandatory**.
 
 Each storage driver has driver-specific variables that can be set.  Some are required, some
-are optional. Details for each driver can be found in the [User Guide)[http://rexray.readthedocs.org/en/stable/].
+are optional. Details for each driver can be found in the [User Guide](http://rexray.readthedocs.org/en/stable/).
 
 **AWS**
 
