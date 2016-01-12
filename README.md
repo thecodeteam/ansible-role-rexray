@@ -121,6 +121,25 @@ rexray_vbox_controller_name: SATA
 rexray_vbox_machine: ''
 ```
 
+**VMAX**
+
+```yaml
+rexray_vmax_smisHost: ''
+rexray_vmax_smisPort: ''
+rexray_vmax_insecure: false
+rexray_vmax_username: ''
+rexray_vmax_password: ''
+rexray_vmax_sid: ''
+rexray_vmax_volumePrefix: ''
+rexray_vmax_storageGroup: ''
+rexray_vmax_mode: vmh
+rexray_vmax_vmh:
+  host: ''
+  username: ''
+  password: ''
+  insecure: false
+```
+
 Dependencies
 ------------
 

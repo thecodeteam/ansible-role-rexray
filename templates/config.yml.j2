@@ -83,20 +83,22 @@ virtualbox:
 {% endif %}
 {% if "vmax" in rexray_storage_drivers %}
 vmax:
-  smisHost:
-  smisPort:
-  insecure:
-  username:
-  password:
-  sid:
-  volumePrefix:
-  storageGroup:
-  mode:
+  smisHost: {{ rexray_vmax_smisHost }}
+  smisPort: {{ rexray_vmax_smisPort }}
+  insecure: {{ rexray_vmax_insecure }}
+  username: {{ rexray_vmax_username }}
+  password: {{ rexray_vmax_password }}
+  sid: {{ rexray_vmax_sid }}
+  volumePrefix: {{ rexray_vmax_volumePrefix }}
+  storageGroup: {{ rexray_vmax_storageGroup }}
+  mode: {{ rexray_vmax_mode }}
+{% if "vmh" == rexray_vmax_mode %}
   vmh:
-    host:
-    username:
-    password:
-    insecure:
+    host: {{ rexray_vmax_vmh.host }}
+    username: {{ rexray_vmax_vmh.username }}
+    password: {{ rexray_vmax_vmh.password }}
+    insecure: {{ rexray_vmax_vmh.insecure }}
+{% endif %}
 {% endif %}
 {% if "xtremio" in rexray_storage_drivers %}
 xtremio:
