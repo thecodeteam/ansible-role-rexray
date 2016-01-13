@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  sudo: yes
+  roles:
+  - { role: codenrhoden.rexray,
+      rexray_storage_drivers: [virtualbox],
+      rexray_vbox_endpoint: "http://10.0.2.2:18083" }
