@@ -23,10 +23,13 @@ Vagrant.configure(2) do |config|
       node.vm.provision "ansible_local" do |ansible|
         ansible.playbook = "ansible_rexray.yml"
         ansible.galaxy_role_file = "galaxy_roles.txt"
-        ansible.extra_vars = {
-          rexray_vbox_volume_path: "#{dir}"
-        }
+        #ansible.extra_vars = {
+        #  rexray_vbox_volume_path: "#{dir}"
+        #}
       end
+
+      node.vm.provision "shell",
+        inline: "sed -i '/.*volumePath.*/c\\\x20\x20volumePath: \"#{dir}\"' /etc/rexray/config.yml"
     end
   end
 end
