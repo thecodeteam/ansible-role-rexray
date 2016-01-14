@@ -11,9 +11,11 @@ install:
   - pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  - "echo '[defaults]\nroles_path = ../' > ansible.cfg"
+  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
 script:
+  - cat ansible.cfg
+
   # Check the role/playbook's syntax.
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
 
