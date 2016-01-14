@@ -1,6 +1,8 @@
 rexray
 =========
 
+[![Build Status](https://travis-ci.org/codenrhoden/ansible-role-rexray.svg?branch=master)](https://travis-ci.org/codenrhoden/ansible-role-rexray)
+
 Ansible role that installs and configures [REX-Ray](https://github.com/emccode/rexray).
 
 See http://rexray.readthedocs.org/en/stable/ for details on REX-Ray and specifically how
