@@ -1,7 +1,7 @@
 rexray
 =========
 
-[![Build Status](https://travis-ci.org/codenrhoden/ansible-role-rexray.svg?branch=master)](https://travis-ci.org/codenrhoden/ansible-role-rexray)
+[![Build Status](https://travis-ci.org/emccode/ansible-role-rexray.svg?branch=master)](https://travis-ci.org/emccode/ansible-role-rexray)
 
 Ansible role that installs and configures [REX-Ray](https://github.com/emccode/rexray).
 
@@ -168,18 +168,18 @@ for storing sensitive variable values, such as passwords and API keys.
 ```yaml
 - hosts: gce_docker_hosts
   roles:
-  - { role: codenrhoden.rexray,
+  - { role: emccode.rexray,
       rexray_service: true,
       rexray_storage_drivers: [gce],
       rexray_gce_keyfile: "/opt/gce_keyfile" }
 - hosts: gce_containers
   roles:
-  - { role: codenrhoden.rexray,
+  - { role: emccode.rexray,
       rexray_storage_drivers: [gce],
       rexray_gce_keyfile: "/opt/gce_keyfile" }
 - hosts: vbox_local_dev_containers
   roles:
-  - { role: codenrhoden.rexray,
+  - { role: emccode.rexray,
       rexray_channel: unstable,
       rexray_storage_drivers: [virtualbox],
       rexray_vbox_endpoint: "http://10.0.2.2:18083",
