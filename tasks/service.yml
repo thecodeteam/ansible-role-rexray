@@ -1,4 +1,0 @@
----
-
-- name: Start REX-Ray service
-  command: rexray service start

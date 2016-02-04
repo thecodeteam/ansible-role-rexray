@@ -1,4 +1,6 @@
 ---
 - name: restart rexray
-  command: rexray service restart
+  service:
+    name: rexray
+    state: restarted
   when: rexray_service

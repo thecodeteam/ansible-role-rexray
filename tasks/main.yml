@@ -8,5 +8,8 @@
 
 - include: config.yml
 
-- include: service.yml
+- name: ensure rexray is running
+  service:
+    name: rexray
+    state: started
   when: rexray_service
