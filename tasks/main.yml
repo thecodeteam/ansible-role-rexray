@@ -1,10 +1,15 @@
 ---
-# OS-specific install routines
-- include: install-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+# This section commented out until packages have real repos
+# Until then, curl bash install is really the only way
 
-- include: install-Debian.yml
-  when: ansible_os_family == 'Debian'
+# OS-specific install routines
+#- include: install-RedHat.yml
+#  when: ansible_os_family == 'RedHat'
+
+#- include: install-Debian.yml
+#  when: ansible_os_family == 'Debian'
+
+- include: curlinstall.yml
 
 - include: config.yml
 
