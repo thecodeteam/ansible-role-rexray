@@ -1,29 +1,28 @@
----
 # {{ ansible_managed }}
 rexray:
-  logLevel: warn
-  osDrivers:
-{% for driver in rexray_os_drivers %}
-  - {{ driver }}
-{% endfor %}
-  volumeDrivers:
-{% for driver in rexray_volume_drivers %}
-  - {{ driver }}
-{% endfor %}
-  storageDrivers:
-{% for driver in rexray_storage_drivers %}
-  - {{ driver }}
-{% endfor %}
-{% if "ec2" in rexray_storage_drivers %}
-aws:
+  logLevel: {{ rexray_log_level }}
+libstorage:
+  service: {{ rexray_storage_drivers[0] }}
+
+{% if "ebs" in rexray_storage_drivers %}
+ebs:
   accessKey: {{ rexray_aws_accesskey }}
   secretKey: {{ rexray_aws_secretkey }}
   region: {{ rexray_aws_region }}
 {% endif %}
+
+{% if "efs" in rexray_storage_drivers %}
+efs:
+  accessKey: {{ rexray_aws_accesskey }}
+  secretKey: {{ rexray_aws_secretkey }}
+  region: {{ rexray_aws_region }}
+{% endif %}
+
 {% if "gce" in rexray_storage_drivers %}
-gce:
+gcepd:
   keyfile: {{ rexray_gce_keyfile }}
 {% endif %}
+
 {% if "isilon" in rexray_storage_drivers %}
 isilon:
   endpoint: {{ rexray_isilon_endpoint }}
@@ -33,8 +32,9 @@ isilon:
   volumePath: {{ rexray_isilon_volumePath }}
   nfsHost: {{ rexray_isilon_nfsHost }}
 {% endif %}
-{% if "openstack" in rexray_storage_drivers %}
-openstack:
+
+{% if "cinder" in rexray_storage_drivers %}
+cinder:
   authURL: {{ rexray_os_authurl }}
   userID: {{ rexray_os_userid }}
   userName: {{ rexray_os_username }}
@@ -46,17 +46,7 @@ openstack:
   regionName: {{ rexray_os_regionname }}
   availabilityZoneName: {{ rexray_os_availabilityzonename }}
 {% endif %}
-{% if "rackspace" in rexray_storage_drivers %}
-rackspace:
-  authURL: {{ rexray_rax_authurl }}
-  userID: {{ rexray_rax_userid }}
-  userName: {{ rexray_rax_username }}
-  password: {{ rexray_rax_password }}
-  tenantID: {{ rexray_rax_tenantid }}
-  tenantName: {{ rexray_rax_tenantname }}
-  domainID: {{ rexray_rax_domainid }}
-  domainName: {{ rexray_rax_domainname }}
-{% endif %}
+
 {% if "scaleio" in rexray_storage_drivers %}
 scaleio:
   endpoint: {{ rexray_sio_endpoint }}
@@ -71,6 +61,7 @@ scaleio:
   storagePoolID: {{ rexray_sio_storagepoolid }}
   storagePoolName: {{ rexray_sio_storagepoolname }}
 {% endif %}
+
 {% if "virtualbox" in rexray_storage_drivers %}
 virtualbox:
   endpoint: {{ rexray_vbox_endpoint }}
@@ -80,33 +71,4 @@ virtualbox:
   tls: {{ rexray_vbox_tls }}
   controllerName: {{ rexray_vbox_controller_name }}
   localMachineNameOrId: {{ rexray_vbox_machine }}
-{% endif %}
-{% if "vmax" in rexray_storage_drivers %}
-vmax:
-  smisHost: {{ rexray_vmax_smisHost }}
-  smisPort: {{ rexray_vmax_smisPort }}
-  insecure: {{ rexray_vmax_insecure }}
-  username: {{ rexray_vmax_username }}
-  password: {{ rexray_vmax_password }}
-  sid: {{ rexray_vmax_sid }}
-  volumePrefix: {{ rexray_vmax_volumePrefix }}
-  storageGroup: {{ rexray_vmax_storageGroup }}
-  mode: {{ rexray_vmax_mode }}
-{% if "vmh" == rexray_vmax_mode %}
-  vmh:
-    host: {{ rexray_vmax_vmh.host }}
-    username: {{ rexray_vmax_vmh.username }}
-    password: {{ rexray_vmax_vmh.password }}
-    insecure: {{ rexray_vmax_vmh.insecure }}
-{% endif %}
-{% endif %}
-{% if "xtremio" in rexray_storage_drivers %}
-xtremio:
-  endpoint: {{ rexray_xtremio_endpoint }}
-  userName: {{ rexray_xtremio_userName }}
-  password: {{ rexray_xtremio_password }}
-  insecure: {{ rexray_xtremio_insecure }}
-  deviceMapper: {{ rexray_xtremio_deviceMapper }}
-  multipath: {{ rexray_xtremio_multipath }}
-  remoteManagement: {{ rexray_xtremio_remoteManagement }}
 {% endif %}

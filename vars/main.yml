@@ -5,6 +5,9 @@ rexray_channel: stable
 # service can be true of false - determines whether to start the rexray daemon
 rexray_service: false
 
+# loglevel can be on of debug, info, warn, error
+rexray_log_level: warn
+
 # list of storage drivers to enable
 # one of ec2 | gce | isilon | openstack | rackspace | scaleio | virtualbox | vmax | xtremio
 rexray_storage_drivers: []
@@ -62,5 +65,3 @@ rexray_vbox_machine: ''
 # These should not be overriden at this time
 rexray_pkg_url: https://dl.bintray.com/emccode/rexray
 rexray_version: latest
-rexray_os_drivers: [linux]
-rexray_volume_drivers: [docker]
