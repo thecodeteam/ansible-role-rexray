@@ -1,9 +1,9 @@
 rexray
 =========
 
-[![Build Status](https://travis-ci.org/emccode/ansible-role-rexray.svg?branch=master)](https://travis-ci.org/emccode/ansible-role-rexray)
+[![Build Status](https://travis-ci.org/codedellemc/ansible-role-rexray.svg?branch=master)](https://travis-ci.org/codedellemc/ansible-role-rexray)
 
-Ansible role that installs and configures [REX-Ray](https://github.com/emccode/rexray).
+Ansible role that installs and configures [REX-Ray](https://github.com/codedellemc/rexray).
 
 See http://rexray.readthedocs.org/en/stable/ for details on REX-Ray and specifically how
 the REX-Ray config file should be populated.
@@ -194,5 +194,5 @@ Apache 2.0
 Author Information
 ------------------
 
-This role created by [Travis Rhoden](https://github.com/codenrhoden), a
-developer advocate at [EMC {code}](http://blog.emccode.com).
+This role created by [Travis Rhoden](https://github.com/codenrhoden), of
+[{code} by Dell EMC](http://codedellemc.com).
