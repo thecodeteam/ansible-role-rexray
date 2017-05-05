@@ -37,16 +37,6 @@ rexray_os_domainname: ''
 rexray_os_regionname: ''
 rexray_os_availabilityzonename: ''
 
-# Rackspace Storage Driver
-rexray_rax_authurl: ''
-rexray_rax_userid: 0
-rexray_rax_username: ''
-rexray_rax_password: ''
-rexray_rax_tenantid: 0
-rexray_rax_tenantname: ''
-rexray_rax_domainid: 0
-rexray_rax_domainname: ''
-
 # ScaleIO Storage Driver
 rexray_sio_endpoint: ''
 rexray_sio_insecure: false
@@ -68,31 +58,6 @@ rexray_vbox_tls: false
 rexray_vbox_volume_path: ''
 rexray_vbox_controller_name: SATA
 rexray_vbox_machine: ''
-
-# VMAX Storage Driver
-rexray_vmax_smisHost: ''
-rexray_vmax_smisPort: ''
-rexray_vmax_insecure: false
-rexray_vmax_username: ''
-rexray_vmax_password: ''
-rexray_vmax_sid: ''
-rexray_vmax_volumePrefix: ''
-rexray_vmax_storageGroup: ''
-rexray_vmax_mode: vmh
-rexray_vmax_vmh:
-  host: ''
-  username: ''
-  password: ''
-  insecure: false
-
-# XtremIO Storage driver
-rexray_xtremio_endpoint: ''
-rexray_xtremio_userName: ''
-rexray_xtremio_password: ''
-rexray_xtremio_insecure: false
-rexray_xtremio_deviceMapper: false
-rexray_xtremio_multipath: false
-rexray_xtremio_remoteManagement: false
 
 # These should not be overriden at this time
 rexray_pkg_url: https://dl.bintray.com/emccode/rexray

@@ -2,7 +2,7 @@
 galaxy_info:
   author: Travis Rhoden
   description: REX-Ray installation and configuration
-  company: EMC {code}
+  company: "{code} by Dell EMC"
   license: license (Apache)
   min_ansible_version: 1.6
   platforms:
@@ -24,6 +24,5 @@ galaxy_info:
   - cloud
   - cloud:ec2
   - cloud:gce
-  - cloud:rax
   - development
 dependencies: []
