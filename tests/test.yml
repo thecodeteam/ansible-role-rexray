@@ -3,4 +3,6 @@
   remote_user: root
   become: true
   roles:
-    - ansible-role-rexray
+    - { role: ansible-role-rexray,
+        rexray_storage_drivers: [virtualbox],
+        rexray_vbox_endpoint: "http://10.0.2.2:18083" }
