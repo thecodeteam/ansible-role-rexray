@@ -3,72 +3,112 @@ rexray:
   logLevel: {{ rexray_log_level }}
 libstorage:
   service: {{ rexray_storage_drivers[0] }}
-
+  server:
+    services:
+{% for driver in rexray_storage_drivers %}
+      {{ driver }}:
+        driver: {{ driver }}
+{% endfor %}
 {% if "ebs" in rexray_storage_drivers %}
 ebs:
-  accessKey: {{ rexray_aws_accesskey }}
-  secretKey: {{ rexray_aws_secretkey }}
-  region: {{ rexray_aws_region }}
+{% if rexray_aws_accesskey is defined %}  accessKey: {{ rexray_aws_accesskey }}
 {% endif %}
-
+{% if rexray_aws_secretkey is defined %}  secretKey: {{ rexray_aws_secretkey }}
+{% endif %}
+{% if rexray_aws_region is defined %}  region: {{ rexray_aws_region }}
+{% endif %}
+{% endif %}
 {% if "efs" in rexray_storage_drivers %}
 efs:
-  accessKey: {{ rexray_aws_accesskey }}
-  secretKey: {{ rexray_aws_secretkey }}
-  region: {{ rexray_aws_region }}
+{% if rexray_aws_accesskey is defined %}  accessKey: {{ rexray_aws_accesskey }}
 {% endif %}
-
+{% if rexray_aws_secretkey is defined %}  secretKey: {{ rexray_aws_secretkey }}
+{% endif %}
+{% if rexray_aws_region is defined %}  region: {{ rexray_aws_region }}
+{% endif %}
+{% endif %}
 {% if "gce" in rexray_storage_drivers %}
 gcepd:
-  keyfile: {{ rexray_gce_keyfile }}
+{% if rexray_gce_keyfile is defined %}  keyfile: {{ rexray_gce_keyfile }}
 {% endif %}
-
+{% endif %}
 {% if "isilon" in rexray_storage_drivers %}
 isilon:
-  endpoint: {{ rexray_isilon_endpoint }}
-  insecure: {{ rexray_isilon_insecure }}
-  username: {{ rexray_isilon_username }}
-  password: {{ rexray_isilon_password }}
-  volumePath: {{ rexray_isilon_volumePath }}
-  nfsHost: {{ rexray_isilon_nfsHost }}
+{% if rexray_isilon_endpoint is defined %}  endpoint: {{ rexray_isilon_endpoint }}
 {% endif %}
-
+{% if rexray_isilon_insecure is defined %}  insecure: {{ rexray_isilon_insecure }}
+{% endif %}
+{% if rexray_isilon_username is defined %}  username: {{ rexray_isilon_username }}
+{% endif %}
+{% if rexray_isilon_password is defined %}  password: {{ rexray_isilon_password }}
+{% endif %}
+{% if rexray_isilon_volumePath is defined %}  volumePath: {{ rexray_isilon_volumePath }}
+{% endif %}
+{% if rexray_isilon_nfsHost is defined %}  nfsHost: {{ rexray_isilon_nfsHost }}
+{% endif %}
+{% endif %}
 {% if "cinder" in rexray_storage_drivers %}
 cinder:
-  authURL: {{ rexray_os_authurl }}
-  userID: {{ rexray_os_userid }}
-  userName: {{ rexray_os_username }}
-  password: {{ rexray_os_password }}
-  tenantID: {{ rexray_os_tenantid }}
-  tenantName: {{ rexray_os_tenantname }}
-  domainID: {{ rexray_os_domainid }}
-  domainName: {{ rexray_os_domainname }}
-  regionName: {{ rexray_os_regionname }}
-  availabilityZoneName: {{ rexray_os_availabilityzonename }}
+{% if rexray_os_authurl is defined %}  authURL: {{ rexray_os_authurl }}
 {% endif %}
-
+{% if rexray_os_userid is defined %}  userID: {{ rexray_os_userid }}
+{% endif %}
+{% if rexray_os_username is defined %}  userName: {{ rexray_os_username }}
+{% endif %}
+{% if rexray_os_password is defined %}  password: {{ rexray_os_password }}
+{% endif %}
+{% if rexray_os_tenantid is defined %}  tenantID: {{ rexray_os_tenantid }}
+{% endif %}
+{% if rexray_os_tenantname is defined %}  tenantName: {{ rexray_os_tenantname }}
+{% endif %}
+{% if rexray_os_domainid is defined %}  domainID: {{ rexray_os_domainid }}
+{% endif %}
+{% if rexray_os_domainname is defined %}  domainName: {{ rexray_os_domainname }}
+{% endif %}
+{% if rexray_os_regionname is defined %}  regionName: {{ rexray_os_regionname }}
+{% endif %}
+{% if rexray_os_availabilityzonename is defined %}  availabilityZoneName: {{ rexray_os_availabilityzonename }}
+{% endif %}
+{% endif %}
 {% if "scaleio" in rexray_storage_drivers %}
 scaleio:
-  endpoint: {{ rexray_sio_endpoint }}
-  insecure: {{ rexray_sio_insecure }}
-  useCerts: {{ rexray_sio_usecerts }}
-  userName: {{ rexray_sio_username }}
-  password: {{ rexray_sio_password }}
-  systemID: {{ rexray_sio_systemid }}
-  systemName: {{ rexray_sio_systemname }}
-  protectionDomainID: {{ rexray_sio_protectiondomainid }}
-  protectionDomainName: {{ rexray_sio_protectiondomainname }}
-  storagePoolID: {{ rexray_sio_storagepoolid }}
-  storagePoolName: {{ rexray_sio_storagepoolname }}
+{% if rexray_sio_endpoint is defined %}  endpoint: {{ rexray_sio_endpoint }}
 {% endif %}
-
+{% if rexray_sio_insecure is defined %}  insecure: {{ rexray_sio_insecure }}
+{% endif %}
+{% if rexray_sio_usecerts is defined %}  useCerts: {{ rexray_sio_usecerts }}
+{% endif %}
+{% if rexray_sio_username is defined %}  userName: {{ rexray_sio_username }}
+{% endif %}
+{% if rexray_sio_password is defined %}  password: {{ rexray_sio_password }}
+{% endif %}
+{% if rexray_sio_systemid is defined %}  systemID: {{ rexray_sio_systemid }}
+{% endif %}
+{% if rexray_sio_systemname is defined %}  systemName: {{ rexray_sio_systemname }}
+{% endif %}
+{% if rexray_sio_protectiondomainid is defined %}  protectionDomainID: {{ rexray_sio_protectiondomainid }}
+{% endif %}
+{% if rexray_sio_protectiondomainname is defined %}  protectionDomainName: {{ rexray_sio_protectiondomainname }}
+{% endif %}
+{% if rexray_sio_storagepoolid is defined %}  storagePoolID: {{ rexray_sio_storagepoolid }}
+{% endif %}
+{% if rexray_sio_storagepoolname is defined %}  storagePoolName: {{ rexray_sio_storagepoolname }}
+{% endif %}
+{% endif %}
 {% if "virtualbox" in rexray_storage_drivers %}
 virtualbox:
-  endpoint: {{ rexray_vbox_endpoint }}
-  volumePath: {{ rexray_vbox_volume_path }}
-  userName: {{ rexray_vbox_user }}
-  password: {{ rexray_vbox_pass }}
-  tls: {{ rexray_vbox_tls }}
-  controllerName: {{ rexray_vbox_controller_name }}
-  localMachineNameOrId: {{ rexray_vbox_machine }}
+{% if rexray_vbox_endpoint is defined %}  endpoint: {{ rexray_vbox_endpoint }}
+{% endif %}
+{% if rexray_vbox_volume_path is defined %}  volumePath: {{ rexray_vbox_volume_path }}
+{% endif %}
+{% if rexray_vbox_user is defined %}  userName: {{ rexray_vbox_user }}
+{% endif %}
+{% if rexray_vbox_pass is defined %}  password: {{ rexray_vbox_pass }}
+{% endif %}
+{% if rexray_vbox_tls is defined %}  tls: {{ rexray_vbox_tls }}
+{% endif %}
+{% if rexray_vbox_controller_name is defined %}  controllerName: {{ rexray_vbox_controller_name }}
+{% endif %}
+{% if rexray_vbox_machine is defined %}  localMachineNameOrId: {{ rexray_vbox_machine }}
+{% endif %}
 {% endif %}
