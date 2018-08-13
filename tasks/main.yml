@@ -9,11 +9,17 @@
 #- include: install-Debian.yml
 #  when: ansible_os_family == 'Debian'
 
+- name: Check if rexray installed
+  stat:
+    path: /usr/bin/rexray
+  register: rexray_installed
+
 - include: curlinstall.yml
+  when: rexray_installed.stat.exists == False
 
 - include: config.yml
 
-- name: ensure rexray is running
+- name: Ensure rexray is running
   service:
     name: rexray
     state: started
