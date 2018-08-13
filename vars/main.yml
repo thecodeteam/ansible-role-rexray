@@ -8,6 +8,13 @@ rexray_service: false
 # loglevel can be on of debug, info, warn, error
 rexray_log_level: warn
 
+# Enables any host to take control of a volume irrespective of whether other hosts are using the volume. 
+# If this is set to false then plugins should ensure safety first by locking the volume from to the current owner host.
+rexray_volume_preempt: false
+
+# Default volume size
+rexray_volume_size: 1
+
 # list of storage drivers to enable
 # one of ec2 | gce | isilon | openstack | rackspace | scaleio | virtualbox | vmax | xtremio
 rexray_storage_drivers: []

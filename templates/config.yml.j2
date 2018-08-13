@@ -2,6 +2,13 @@
 rexray:
   logLevel: {{ rexray_log_level }}
 libstorage:
+  integration:
+    volume:
+      mount:
+        preempt: {{ rexray_volume_preempt }}
+      create:
+        default:
+          size: {{ rexray_volume_size }}
   service: {{ rexray_storage_drivers[0] }}
   server:
     services:
