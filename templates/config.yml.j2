@@ -112,3 +112,18 @@ virtualbox:
 {% if rexray_vbox_machine is defined %}  localMachineNameOrId: {{ rexray_vbox_machine }}
 {% endif %}
 {% endif %}
+{% if "dobs" in rexray_storage_drivers %}
+dobs:
+{% if rexray_dobs_token is defined %}  token: {{ rexray_dobs_token }}
+{% endif %}
+{% if rexray_dobs_region is defined %}  region: {{ rexray_dobs_region }}
+{% endif %}
+{% if rexray_dobs_convert_underscores %}  convertUnderscores: {{ rexray_dobs_convert_underscores }}
+{% endif %}
+{% if rexray_dobs_status_initial_delay %}  statusInitialDelay: {{ rexray_dobs_status_initial_delay }}
+{% endif %}
+{% if rexray_dobs_status_max_attempts %}  statusMaxAttempts: {{ rexray_dobs_status_max_attempts }}
+{% endif %}
+{% if rexray_dobs_status_timeout %}  statusTimeout: {{ rexray_dobs_status_timeout }}
+{% endif %}
+{% endif %}
