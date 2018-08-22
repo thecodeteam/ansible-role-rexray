@@ -5,7 +5,7 @@ libstorage:
   integration:
     volume:
       mount:
-        preempt: {{ rexray_volume_preempt }}
+        preempt: {{ rexray_volume_preempt | lower }}
       create:
         default:
           size: {{ rexray_volume_size }}
